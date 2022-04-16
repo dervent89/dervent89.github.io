@@ -1,0 +1,92 @@
+@import '../../../styles/variables.scss';
+.site__header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  &_menuBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    .line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 26px;
+      height: 2px;
+      border-radius: 1px;
+      background: $white;
+      display: block;
+      transition: all 0.2s ease-in-out;
+      &_1 {
+        margin-top: -8px;
+      }
+      &_3 {
+        margin-top: 8px;
+      }
+    }
+    &:hover{
+      .line{
+        &_1{
+          margin-top: -10px;
+        }
+        &_2{
+          width: 20px;
+        }
+        &_3{
+          margin-top: 10px;
+        }
+      }
+    }
+    &.active {
+      .line {
+        &_1 {
+          margin-top: 0;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &_2 {
+          opacity: 0;
+        }
+        &_3 {
+          margin-top: 0;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+      &:hover{
+        .line{
+          &_1{
+            width: 28px;
+          }
+          &_3{
+            width: 28px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    height: 60px;
+    padding: 0 60px;
+    &Logo {
+      svg {
+        width: 120px;
+        height: 18px;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 30px;
+  }
+}

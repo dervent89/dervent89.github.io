@@ -1,0 +1,121 @@
+@import './variables.scss';
+.about {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px 0 160px;
+  .page_desc {
+    position: relative;
+    z-index: 2;
+    width: 360px;
+    h1 {
+      font-size: 83px;
+      font-weight: 900;
+      color: $white;
+      line-height: 1;
+      margin: 0;
+    }
+    h2 {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1;
+      color: $main;
+    }
+  }
+  .page_content {
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 440px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .content {
+      width: 100%;
+      max-width: 540px;
+      p {
+        font-size: 20px;
+        font-weight: 300;
+        color: $white;
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+.plus_list {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+  width: 298px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  svg {
+    margin: 15px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .about {
+    padding: 0 40px 0 100px;
+    .page_desc {
+      h1 {
+        font-size: 70px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+    }
+    .page_content {
+      width: calc(100% - 400px);
+      .content {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .plus_list {
+    left: 0;
+    width: 46px;
+    svg {
+      margin: 8px;
+      width: 6px;
+      height: 6px;
+    }
+  }
+  .about {
+    padding: 40px;
+    flex-direction: column;
+    justify-content: center;
+    .page_desc {
+      width: 100%;
+      h1 {
+        font-size: 52px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+    .page_content {
+      width: 100%;
+      padding: 0;
+      .content {
+        max-width: none;
+        p {
+          font-size: 14px;
+          line-height: 1.65;
+        }
+      }
+    }
+  }
+}

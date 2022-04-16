@@ -1,0 +1,134 @@
+@import '../../../styles/variables';
+.site__menu {
+  position: absolute;
+  width: calc(100% - 80px);
+  height: calc(100% - 160px);
+  top: 80px;
+  left: 80px;
+  bottom: 80px;
+  background: rgba($grey, 0.8);
+  border: 1px solid $border;
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  display: none;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+
+  .plus_list {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    width: 88.1%;
+    max-width: 900px;
+    height: 557px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    svg {
+      margin: 15px;
+      transition-delay: 0.3s;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .menu {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 160px;
+    transform: translateY(-50%);
+    &_list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 25px 0;
+        a {
+          color: $white;
+          font-size: 48px;
+          font-weight: 300;
+          padding: 10px;
+          text-decoration: none;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          white-space: nowrap;
+          transition: all 0.2s ease-in-out;
+          &:after {
+            content: '';
+            width: 0;
+            height: 4px;
+            background: $main;
+            display: block;
+            margin-left: 30px;
+            transition: all 0.2s ease-in-out;
+          }
+          &:hover {
+            color: $main;
+          }
+          &.active {
+            &:after {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &Active {
+    display: block;
+  }
+  &Animate {
+    opacity: 1;
+  }
+  @media screen and (max-width: 991px) {
+    top: 60px;
+    left: 60px;
+    right: 0;
+    bottom: 0;
+    height: calc(100% - 60px);
+    width: calc(100% - 60px);
+    .menu {
+      left: 0;
+      width: 100%;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        a {
+          font-size: 26px;
+          display: inline-flex;
+          text-align: center;
+          justify-content: center;
+          &:after {
+            margin-left: 15px;
+          }
+          &:before {
+            content: '';
+            width: 0;
+            height: 4px;
+            background: $main;
+            display: block;
+            margin-right: 15px;
+            transition: all 0.2s ease-in-out;
+          }
+          &.active {
+            &:before {
+              width: 20px;
+            }
+            &:after {
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

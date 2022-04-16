@@ -1,0 +1,110 @@
+@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $dark;
+  font-size: 16px;
+  color: $white;
+  margin: 0;
+  padding: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.btn {
+  background: $main;
+  color: $dark;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.site {
+  height: 100vh;
+}
+.site__container {
+  overflow: hidden;
+  width: calc(100% - 80px);
+  height: calc(100vh - 160px);
+  border: 1px solid $border;
+  margin-left: 80px;
+  z-index: 100;
+  @media screen and (max-width: 991px) {
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin-left: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+}
+.site__main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: $grey;
+  transition: opacity 0.1s ease-in-out;
+  &.isMenuActive {
+    opacity: 0.6;
+  }
+  @media screen and (max-width: 991px) {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+  }
+}
+.pageChange-enter-active,
+.pageChange-leave-active {
+  transition: all 0.5s;
+}
+.pageChange-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.pageChange-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.MenuTransition-enter-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.MenuTransition-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.MenuTransition-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.MenuTransition-leave-to {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.swiper-button-disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet {
+  background: #ffffff;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f1e114;
+  width: 24px;
+  opacity: 1;
+}

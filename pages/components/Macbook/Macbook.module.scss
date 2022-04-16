@@ -1,0 +1,314 @@
+@import '../../../styles/variables.scss';
+
+.macbookWrapper {
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  a {
+    display: none;
+  }
+}
+.app {
+  position: absolute;
+  left: 1%;
+  right: 0.75%;
+  top: 1.5%;
+  bottom: 1.5%;
+  -webkit-transition: opacity 600ms ease,
+    -webkit-transform 1300ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 600ms ease,
+    -webkit-transform 1300ms cubic-bezier(0.2, 1, 0.3, 1);
+  -o-transition: opacity 600ms ease,
+    transform 1300ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 600ms ease, transform 1300ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 600ms ease, transform 1300ms cubic-bezier(0.2, 1, 0.3, 1),
+    -webkit-transform 1300ms cubic-bezier(0.2, 1, 0.3, 1);
+  opacity: 0;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+  &Bar {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 1.25% 1.5%;
+    background: #e8e8e8;
+  }
+  &Content {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    &Item {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.macbook {
+  width: 65vw;
+  margin: 0 auto;
+  -webkit-transition: opacity 200ms ease-out,
+    -webkit-transform 2300ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 200ms ease-out,
+    -webkit-transform 2300ms cubic-bezier(0.2, 1, 0.3, 1);
+  -o-transition: opacity 200ms ease-out,
+    transform 2300ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 200ms ease-out,
+    transform 2300ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 200ms ease-out,
+    transform 2300ms cubic-bezier(0.2, 1, 0.3, 1),
+    -webkit-transform 2300ms cubic-bezier(0.2, 1, 0.3, 1);
+  -webkit-transition-delay: 100ms;
+  -o-transition-delay: 100ms;
+  transition-delay: 100ms;
+  -webkit-perspective: 1400px;
+  perspective: 1400px;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 70px, 0);
+  transform: translate3d(0, 70px, 0);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  & * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &Display {
+    position: relative;
+    z-index: 2;
+    width: 84%;
+    margin: 0 auto;
+    padding: 2% 1.4%;
+    background: #0a0a0a;
+    border-top-left-radius: 3% 5%;
+    border-top-right-radius: 3% 5%;
+    border-bottom-left-radius: 1.25% 4%;
+    border-bottom-right-radius: 1.25% 4%;
+    -webkit-transition: all 1750ms cubic-bezier(0.2, 1, 0.3, 1);
+    -o-transition: all 1750ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition: all 1750ms cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: translate3d(0, 10px, 0) rotateX(-84deg);
+    transform: translate3d(0, 10px, 0) rotateX(-84deg);
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+    }
+    &:before {
+      position: absolute;
+      z-index: 1;
+      top: 0.75%;
+      left: 12.5%;
+      right: 0.5%;
+      bottom: 0;
+      border-top-left-radius: 2.5% 4%;
+      border-top-right-radius: 2.5% 4%;
+      border-bottom-left-radius: 1.25% 4%;
+      border-bottom-right-radius: 1.25% 4%;
+      background: -webkit-linear-gradient(
+        30deg,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.07) 50%,
+        rgba(255, 255, 255, 0.07) 100%
+      );
+      -webkit-transition: left 1750ms cubic-bezier(0.2, 1, 0.3, 1);
+      -o-transition: left 1750ms cubic-bezier(0.2, 1, 0.3, 1);
+      transition: left 1750ms cubic-bezier(0.2, 1, 0.3, 1);
+      left: -32%;
+    }
+    &Inner {
+      position: relative;
+      padding-bottom: 57%;
+      background: #1f1e1e;
+    }
+  }
+  &Body {
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    height: 5px;
+    background-blend-mode: normal, multiply;
+    background-color: #1f1f1f;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(0, 0, 0, 0.04)),
+      to(rgba(255, 255, 255, 0.04))
+    );
+    background-image: -webkit-linear-gradient(
+      left,
+      rgba(0, 0, 0, 0.04),
+      rgba(255, 255, 255, 0.04)
+    );
+    background-image: -o-linear-gradient(
+      left,
+      rgba(0, 0, 0, 0.04),
+      rgba(255, 255, 255, 0.04)
+    );
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.04),
+      rgba(255, 255, 255, 0.04)
+    );
+    -webkit-box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.02);
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.02);
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      padding-bottom: 1.25%;
+      width: 12%;
+      top: 0;
+      left: 50%;
+      margin-left: -6%;
+      border-bottom-left-radius: 11% 100%;
+      border-bottom-right-radius: 11% 100%;
+      background: #494949;
+      border-bottom: 1px solid #d9d9d9;
+    }
+    &Bottom {
+      position: absolute;
+      bottom: -16px;
+      width: 100%;
+      height: 16px;
+      z-index: 4;
+      background-blend-mode: normal, multiply, multiply, multiply, multiply;
+      background-color: #080808;
+      background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          from(rgba(0, 0, 0, 0.07)),
+          color-stop(rgba(234, 234, 234, 0.07)),
+          to(rgba(255, 255, 255, 0.07))
+        ),
+        -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.07)), color-stop(rgba(234, 234, 234, 0.07)), to(rgba(255, 255, 255, 0.07))),
+        -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.07)), to(rgba(255, 255, 255, 0.07))),
+        -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.05)), to(rgba(0, 0, 0, 0.05)));
+      background-image: -webkit-linear-gradient(
+          left,
+          rgba(0, 0, 0, 0.07),
+          rgba(234, 234, 234, 0.07),
+          rgba(255, 255, 255, 0.07)
+        ),
+        -webkit-linear-gradient(left, rgba(0, 0, 0, 0.07), rgba(234, 234, 234, 0.07), rgba(255, 255, 255, 0.07)),
+        -webkit-linear-gradient(top, rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.07)),
+        -webkit-linear-gradient(top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.05));
+      background-image: -o-linear-gradient(
+          left,
+          rgba(0, 0, 0, 0.07),
+          rgba(234, 234, 234, 0.07),
+          rgba(255, 255, 255, 0.07)
+        ),
+        -o-linear-gradient(left, rgba(0, 0, 0, 0.07), rgba(234, 234, 234, 0.07), rgba(255, 255, 255, 0.07)),
+        -o-linear-gradient(top, rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.07)),
+        -o-linear-gradient(top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.05));
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.07),
+          rgba(234, 234, 234, 0.07),
+          rgba(255, 255, 255, 0.07)
+        ),
+        linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.07),
+          rgba(234, 234, 234, 0.07),
+          rgba(255, 255, 255, 0.07)
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.07),
+          rgba(255, 255, 255, 0.07)
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.05),
+          rgba(0, 0, 0, 0.05)
+        );
+      border-bottom-left-radius: 5% 100%;
+      border-bottom-right-radius: 5% 100%;
+      -webkit-box-shadow: 1px 0px 11px 1px rgba(0, 0, 0, 0.31);
+      box-shadow: 1px 0px 11px 1px rgba(0, 0, 0, 0.31);
+    }
+  }
+  &.open {
+    .macbookDisplay {
+      -webkit-transform: translate3d(0, 0, 0) rotateX(0deg);
+      transform: translate3d(0, 0, 0) rotateX(0deg);
+      &:before {
+        left: 12.5%;
+      }
+    }
+  }
+  &.showApp {
+    .app {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  &.shown {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .macbookWrapper {
+    right: -10%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .macbookWrapper {
+    top: 50%;
+    bottom: inherit;
+    right: inherit;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    a {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $lightGrey;
+      display: inline-block;
+    }
+  }
+  .macbook {
+    width: 70vw;
+
+    &.shown {
+      opacity: 0.9;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .macbook {
+    width: 90vw;
+  }
+}

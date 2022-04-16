@@ -1,0 +1,14 @@
+.site_footer {
+  width: calc(100% - 80px);
+  margin-left: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 300;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
