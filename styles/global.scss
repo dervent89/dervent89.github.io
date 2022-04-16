@@ -13,6 +13,12 @@ html {
   padding: 0;
 }
 
+html,
+body,
+#__next{
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   outline: none;
@@ -29,18 +35,18 @@ html {
 }
 
 .site {
-  height: 100vh;
+  height: 100%;
 }
 .site__container {
   overflow: hidden;
   width: calc(100% - 80px);
-  height: calc(100vh - 160px);
+  height: calc(100% - 160px);
   border: 1px solid $border;
   margin-left: 80px;
   z-index: 100;
   @media screen and (max-width: 991px) {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     margin-left: 0;
     border-bottom: none;
     border-right: none;
