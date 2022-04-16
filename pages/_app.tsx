@@ -6,15 +6,33 @@ import Header from './components/Header';
 import SocialMedia from './components/SocialMedia';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import { useRouter } from 'next/router';
+
+import AboutStyle from '../styles/About.module.scss'
+import ContactStyle from '../styles/Contact.module.scss'
+import HomeStyle from '../styles/Home.module.scss'
+import MyResumeStyle from '../styles/MyResume.module.scss'
+import WorksStyle from '../styles/Works.module.scss'
+import MacbookStyle from './components/Macbook/Macbook.module.scss'
+
+const criticalStyles = {
+  AboutStyle,
+  ContactStyle,
+  HomeStyle,
+  MyResumeStyle,
+  WorksStyle,
+  MacbookStyle
+}
+
+export const StylesContext = createContext(criticalStyles)
 
 const fadeBack = {
   name: 'Fade Back',
   variants: {
     initial: {
       opacity: 0,
-      y: -50,
+      y: -100,
     },
     animate: {
       opacity: 1,
@@ -22,11 +40,11 @@ const fadeBack = {
     },
     exit: {
       opacity: 0,
-      y: 0,
+      y: 100,
     },
   },
   transition: {
-    duration: 0.3,
+    duration: 0.4,
   },
 };
 
@@ -71,31 +89,33 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#f1e112" />
         <meta name="theme-color" content="#f1e112" />
       </Head>
-      <div className="site">
-        <Header isMenuStatus={isMenuActive} isMenuActive={changeMenuStatus} />
-        <SocialMedia isMenuStatus={isMenuActive} />
-        <Menu isMenuStatus={isMenuActive} isMenuAnimate={isMenuAnimate} />
-        <main className="site__container">
-          <LazyMotion features={domAnimation}>
-            <AnimatePresence exitBeforeEnter={!exitBefore} initial={false}>
-              <m.div
-                key={router.route.concat(animation.name)}
-                className="site__main"
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={animation.variants}
-                transition={animation.transition}
-              >
-                <Component {...pageProps} />
-              </m.div>
-            </AnimatePresence>
-          </LazyMotion>
-        </main>
-        <Footer />
-      </div>
+      <StylesContext.Provider value={criticalStyles}>
+        <div className="site">
+          <Header isMenuStatus={isMenuActive} isMenuActive={changeMenuStatus} />
+          <SocialMedia isMenuStatus={isMenuActive} />
+          <Menu isMenuStatus={isMenuActive} isMenuAnimate={isMenuAnimate} />
+          <main className="site__container">
+            <LazyMotion features={domAnimation}>
+              <AnimatePresence exitBeforeEnter={!exitBefore} initial={false}>
+                <m.div
+                  key={router.route.concat(animation.name)}
+                  className="site__main"
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={animation.variants}
+                  transition={animation.transition}
+                >
+                  <Component key={router.asPath} {...pageProps} />
+                </m.div>
+              </AnimatePresence>
+            </LazyMotion>
+          </main>
+          <Footer />
+        </div>
+      </StylesContext.Provider>
     </>
   );
 }
 
-export default MyApp;
+export default React.memo(MyApp);
