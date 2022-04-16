@@ -6,7 +6,7 @@ import Header from './components/Header';
 import SocialMedia from './components/SocialMedia';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
-import { useState, useEffect, ComponentProps } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 const fadeBack = {
@@ -14,7 +14,7 @@ const fadeBack = {
   variants: {
     initial: {
       opacity: 0,
-      y: -100,
+      y: -50,
     },
     animate: {
       opacity: 1,
@@ -22,11 +22,11 @@ const fadeBack = {
     },
     exit: {
       opacity: 0,
-      y: 100,
+      y: 0,
     },
   },
   transition: {
-    duration: 0.4,
+    duration: 0.3,
   },
 };
 
