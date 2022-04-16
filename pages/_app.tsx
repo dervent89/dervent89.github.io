@@ -77,7 +77,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Menu isMenuStatus={isMenuActive} isMenuAnimate={isMenuAnimate} />
         <main className="site__container">
           <LazyMotion features={domAnimation}>
-            <AnimatePresence exitBeforeEnter={!exitBefore}>
+            <AnimatePresence exitBeforeEnter={!exitBefore} initial={false}>
               <m.div
                 key={router.route.concat(animation.name)}
                 className="site__main"
