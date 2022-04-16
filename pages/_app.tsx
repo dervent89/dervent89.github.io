@@ -87,7 +87,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#f1e112" />
         <meta name="msapplication-TileColor" content="#f1e112" />
-        <meta name="theme-color" content="#f1e112" />
+        <meta name="theme-color" content="#272626" />
       </Head>
       <StylesContext.Provider value={criticalStyles}>
         <div className="site">
